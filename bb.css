@@ -1,0 +1,56 @@
+body {
+    display: grid;
+    gap: 1em;
+    margin: 1em 0 0 0;
+    place-items: center;
+  }
+  code {
+    background: #222;
+    border-radius: .25em;
+    color: #EEE;
+    padding: .5em 1em;
+  }
+  form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    inline-size: 100%;;
+    margin-inline: auto;
+    max-inline-size: 800px;
+    row-gap: 3em;
+  }
+  h1 {
+    font-family: ui-sans-setif, system-ui, sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 300;
+    margin: 0;
+  }
+  
+  input[role=switch] {
+    --_p: .0625em;
+    --_fz: 3em;
+    appearance: none;
+    aspect-ratio: 1.8 / 1;
+    background: var(--_bg, hsl(215, 0%, 50%));
+    border-radius: 1em;
+    box-sizing: border-box;
+    font-size: var(--_fz);
+    margin: 0;
+    padding: var(--_p);
+    transition: all .2s linear;
+    width: 1em;
+  }
+  input[role=switch]::after {
+    aspect-ratio: 1 / 1;
+    background: var(--_circle-bg, hsla(0, 0%, 100%, 0.95));
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 100%;
+    transition: inherit;
+  }
+  input[role=switch]:checked {
+    background: var(--_bg-c, hsl(215, 90%, 50%));
+  }
+  input[role=switch]:checked::after {
+    translate: calc(1em - 100% - (2 * var(--_p))) 0;
+  }
